@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="store"> <!--Store is a directive-->
+	<head>
+		<title>Angular Example</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	</head>
+
+	<body ng-controller="StoreController as store"> <!--Attaches the controller and assigns it the store alias -->
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="product in store.products">
+				<h3>
+					{{product.name}}
+					<em class="pull-right">{{product.price | currency}}</em>
+					<img ng-src="{{product.images[0].full}}"/>
+				</h3>
+			
+			<section>
+				<ul class="nav nav-pills">
+					<li><a href ng-click="tab = 1">Description</a></li>
+					<li><a href ng-click="tab = 2">Specifications</a></li>
+					<li><a href ng-click="tab = 3">Reviews</a></li>
+				</ul>
+
+				{{tab}}
+			</section>
+
+
+			</li>
+		</ul>
+
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>
+
+
+
+<!--
+
+	A Directive is a marker on a HTML tag that tells Angular to run or reference some JS code
+
+	Modules are where we define dependencies
+
+	Controller get data onto the screen
+	* where we define our apps behavior by defining functions and values
+
