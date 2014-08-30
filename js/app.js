@@ -5,6 +5,19 @@
 
   app.controller('StoreController', function() {
     this.products = gems; 
+
+  });
+
+  app.controller('PanelController', function() {
+    this.tab = 1;
+
+    this.selectTab = function(setTab) {
+      this.tab = setTab;
+    };
+
+    this.isSelected = function(checkTab){
+      return this.tab === checkTab;
+    };
   });
 
   var gems = [
@@ -27,6 +40,29 @@
         thumb: './img/p1.jpg', 
       },
     ],
+
+    reviews: [
+      {
+        stars: 5, 
+        body: "Delicious!!",
+        author: "Steve Peternell"
+      }, 
+      {
+        stars: 3, 
+        body: "I've had better",
+        author: "Buzz Lightyear"
+      }, 
+      {
+        stars: 1, 
+        body: "Gross!!",
+        author: "Katie Peternell"
+      }, 
+      {
+        stars: 5, 
+        body: "Amazing!!!!!!",
+        author: "Maggie May"
+      }, 
+    ]
   },
 
   { name: 'Product 2',
@@ -49,6 +85,19 @@
         thumb: './img/p2.jpeg', 
       },
     ]
+
+    reviews: [
+      {
+        stars: 5, 
+        body: "WHOA!!",
+        author: "Steve Smith"
+      }, 
+      {
+        stars: 4, 
+        body: "MMMMMMM!",
+        author: "Hulk Hogan"
+      }, 
+    ]
   },
 
   { name: 'Product 3',
@@ -70,6 +119,19 @@
       { 
         full: './img/p3.png',
         thumb: './img/p3.png', 
+      }, 
+    ]
+
+    reviews: [
+      {
+        stars: 5, 
+        body: "OH BOY!",
+        author: "Mickey Mouse"
+      }, 
+      {
+        stars: 1, 
+        body: "Meh",
+        author: "Donald Duck"
       }, 
     ]
   }
